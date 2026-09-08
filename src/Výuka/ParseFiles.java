@@ -1,5 +1,6 @@
 package Výuka;
 
+import fileworks.DataExport;
 import fileworks.DataImport;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ public class ParseFiles {
         String path = "data/countries.txt";
 
         DataImport di = new DataImport(path);
+        DataExport de = new DataExport("output.txt");
 
         //di.printFile();
 
@@ -65,9 +67,14 @@ public class ParseFiles {
             //udělat to Country a napsat tam to jmeno, kontinent, atd.)
 
 
-            Country oneCountry = new Country(name, continent, population, avgAge);
+           Country oneCountry = new Country(name, continent, population, avgAge);
         }
         System.out.println();
+        // Do souboru vypsat pouze zeme evropy
+
+        if (oneCountry.continent.contains("Europe"){
+            de.writeLine(oneCountry.toString());
+        }
 
         di.finishImport();
 
