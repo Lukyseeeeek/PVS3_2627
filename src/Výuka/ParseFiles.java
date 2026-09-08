@@ -55,26 +55,26 @@ public class ParseFiles {
         // Vypsat všechny řádky jako objekty třídy
         //1. přečíst soubor
         //1.1 přečíst řádek
-        while(di.hasNext()) {
+
+        while (di.hasNext()) {
             String line = di.readLine();
-            //rozsekat řádek
             String[] tokens = line.split(";");
-            //udělat to na jednotlivé tokeny (zparsovat long, double)
             String name = tokens[0];
             String continent = tokens[1];
             long population = Long.parseLong(tokens[2]);
             double avgAge = Double.parseDouble(tokens[3]);
-            //udělat to Country a napsat tam to jmeno, kontinent, atd.)
 
+            Country oneCountry = new Country(name, continent, population, avgAge);
 
-           Country oneCountry = new Country(name, continent, population, avgAge);
+            if (oneCountry.continent.contains("Europe")) {
+                de.writeLine(oneCountry.toString());
+            }
         }
-        System.out.println();
+
+
         // Do souboru vypsat pouze zeme evropy
 
-        if (oneCountry.continent.contains("Europe"){
-            de.writeLine(oneCountry.toString());
-        }
+
 
         di.finishImport();
 
