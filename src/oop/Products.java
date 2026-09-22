@@ -1,15 +1,10 @@
 package oop;
 
-import fileworks.DataImport;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-class Product{
-  private  String name;
-  private  String category;
-  private  int amount;
-  private  double pricePerPiece;
+class Product {
+    private String name;
+    private String category;
+    private int amount;
+    private double pricePerPiece;
 
     public String getName() {
         return name;
@@ -32,13 +27,11 @@ class Product{
     }
 
     public void setAmount(int amount) {
-        if (amount >= 0){
+        if (amount >= 0) {
             this.amount = amount;
-        }
-        else {
+        } else {
             this.amount = 0;
         }
-
     }
 
     public double getPricePerPiece() {
@@ -46,17 +39,13 @@ class Product{
     }
 
     public void setPricePerPiece(double pricePerPiece) {
-        if (pricePerPiece > 0 ){
+        if(pricePerPiece > 0){
             this.pricePerPiece = pricePerPiece;
         }
         else {
             this.pricePerPiece = 0;
         }
-
     }
-
-
-
 
     public Product(String name, String category) {
         this.name = name;
@@ -68,7 +57,7 @@ class Product{
         this.amount = amount;
     }
 
-    public Product(String name, String category, int amount, double pricePerPiece) {
+    public Product(String name, String category, int amount, int pricePerPiece) {
         this(name, category, amount);
         this.pricePerPiece = pricePerPiece;
     }
@@ -86,37 +75,7 @@ class Product{
 
 public class Products {
     public static void main(String[] args) {
-
-        //Úkol: Načíst všechny položky do Arraylistu
-        DataImport di = new DataImport("products.txt");
-
-        ArrayList<Product> produkty = new ArrayList<>();
-
-        while (di.hasNext()){
-        String line = di.readLine();
-
-        }
-
-
-        System.out.println(produkty);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // načíst celý soubor a vypsat počet kusů na skladu
 
     }
 }
